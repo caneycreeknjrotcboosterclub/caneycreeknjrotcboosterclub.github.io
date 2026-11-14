@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caney Creek NJROTC Booster Club</title>
+  <meta name="description" content="The Caney Creek High School NJROTC Booster Club in Caney Creek, Texas raises money for cadets. Fall Car Show is Saturday, November 21, 2026.">
+  <style>
+    :root {
+      --navy: #10233f;
+      --ink: #1c1c1c;
+      --paper: #f4f1ea;
+      --card: #fffcf7;
+      --gold: #a6843c;
+      --crimson: #8e2f39;
+      --line: #e4ddd0;
+      --muted: #5c584f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+    a { color: var(--navy); }
+    .skip {
+      position: absolute;
+      left: 1rem;
+      top: -4rem;
+      background: #fff;
+      padding: 0.5rem 0.8rem;
+    }
+    .skip:focus { top: 0.5rem; }
+    header {
+      background: var(--navy);
+      color: #fff;
+    }
+    .wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.85rem 0;
+    }
+    .brand {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+    }
+    .brand img { width: 72px; height: 72px; object-fit: contain; background: #f4f1ea; border-radius: 4px; }
+    .brand strong { display: block; letter-spacing: 0.08em; font-size: 0.78rem; font-weight: 700; }
+    .brand span { display: block; font-size: 1.05rem; letter-spacing: 0.04em; }
+    nav { display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; }
+    nav a { color: #fff; text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { text-decoration: underline; }
+    .hero { padding: 2.5rem 0 2.8rem; }
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 0.14em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin: 0 0 0.6rem;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 0.8rem; max-width: 16ch; }
+    .lede { max-width: 42rem; font-size: 1.12rem; margin: 0 0 1.4rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .btn-gold { background: var(--gold); color: #1c1404; }
+    .btn-line { border: 1px solid #fff; color: #fff; }
+    main section { padding: 2.4rem 0; }
+    h2 { font-size: 1.7rem; margin: 0 0 0.4rem; }
+    .rule { width: 4.5rem; height: 4px; background: var(--crimson); margin: 0 0 1rem; }
+    .rule.gold { background: var(--gold); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.9rem; }
+    article, .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem 1rem 1.1rem;
+    }
+    article h3 { margin: 0.2rem 0 0.35rem; font-size: 1.15rem; }
+    .when { color: var(--crimson); font-weight: 700; margin: 0; font-size: 0.92rem; }
+    .muted { color: var(--muted); }
+    .feature {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .price { font-size: 1.7rem; margin: 0.2rem 0; }
+    ul.clean { margin: 0.4rem 0 0; padding-left: 1.1rem; }
+    footer {
+      background: var(--navy);
+      color: #efe8da;
+      padding: 1.4rem 0 1.8rem;
+      font-size: 0.95rem;
+    }
+    footer a { color: #fff; }
+    @media (max-width: 720px) {
+      .feature { grid-template-columns: 1fr; }
+      .brand img { width: 56px; height: 56px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <header>
+    <div class="wrap top">
+      <a class="brand" href="#content">
+        <img src="brand/booster-club-logo.jpg" alt="Caney Creek NJROTC Booster Club">
+        <div>
+          <strong>CANEY CREEK</strong>
+          <span>NJROTC Booster Club</span>
+        </div>
+      </a>
+      <nav aria-label="Page">
+        <a href="#car-show">Car show</a>
+        <a href="#calendar">Calendar</a>
+        <a href="#support">Support</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="wrap hero">
+      <p class="eyebrow">CANEY CREEK, TEXAS</p>
+      <h1 id="content">Funds for Caney Creek NJROTC cadets.</h1>
+      <p class="lede">The booster club raises money for the Naval Junior Reserve Officer Training Corps at Caney Creek High School. Parents, neighbors, and local businesses keep the unit’s travel, meets, and events going.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Register a car for Nov 21</a>
+        <a class="btn btn-line" href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook page</a>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="car-show">
+      <div class="wrap">
+        <h2>Fall Car Show</h2>
+        <div class="rule"></div>
+        <div class="feature">
+          <div class="panel">
+            <p class="when">Saturday, November 21, 2026 · 8:00 AM–noon Central</p>
+            <h3>Caney Creek High School</h3>
+            <p>13470 FM 1485, Caney Creek, TX 77306</p>
+            <p>Show your ride, look at the cars, and support cadets at Caney Creek and students at Grangerland Intermediate. Presented with the Grangerland Intermediate PTO. Spectators are welcome. Jeremiah’s Italian Ice will be on site. Trophies include Cadets’ Choice, Grangerland Panthers Choice, and People’s Choice.</p>
+            <p class="muted">Show cars are limited to 100. Pre-registration is recommended.</p>
+          </div>
+          <div class="panel">
+            <p class="price">$35 car · $20 booth</p>
+            <ul class="clean">
+              <li><a href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Car registration</a></li>
+              <li><a href="https://www.zeffy.com/en-US/ticketing/vendor-registration-50">Vendor registration</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="calendar">
+      <div class="wrap">
+        <h2>On the calendar</h2>
+        <div class="rule gold"></div>
+        <p class="muted">Dates below are family and community events already on the booster calendar. The full cadet schedule is the unit document updated October 21, 2026.</p>
+        <div class="grid">
+          <article>
+            <p class="when">Nov 21, 2026 · 8:00 AM–noon</p>
+            <h3>Fall Car Show</h3>
+            <p>Caney Creek High School, 13470 FM 1485, Caney Creek.</p>
+          </article>
+          <article>
+            <p class="when">Dec 3, 2026</p>
+            <h3>Booster unit dinner</h3>
+            <p>The unit schedule lists the date. Time and place are not on that schedule yet.</p>
+          </article>
+          <article>
+            <p class="when">Dec 19, 2026</p>
+            <h3>Wreaths Across America</h3>
+            <p>Houston National Cemetery. No start time was listed on the unit schedule.</p>
+          </article>
+          <article>
+            <p class="when">Feb 6, 2027</p>
+            <h3>Tomball Drill Meet</h3>
+            <p>Tomball, Texas. No start time was listed on the unit schedule.</p>
+          </article>
+          <article>
+            <p class="when">Feb 9, 2027 · 8:00 AM–2:00 PM</p>
+            <h3>Blood drive</h3>
+            <p>NJROTC room, Caney Creek High School.</p>
+          </article>
+          <article>
+            <p class="when">Apr 24, 2027 · 5:00–10:00 PM</p>
+            <h3>Military Ball</h3>
+            <p>The unit schedule lists the time. The place is not on that schedule yet.</p>
+          </article>
+          <article>
+            <p class="when">May 7, 2027 · 5:00–8:00 PM</p>
+            <h3>Awards ceremony</h3>
+            <p>Commons, Caney Creek High School.</p>
+          </article>
+        </div>
+        <p><a href="https://docs.google.com/document/d/1Cj2eRN2UWYvBZ_vkA7_JjE63y5CSIAbW/preview">Full 2026–2027 unit schedule</a></p>
+      </div>
+    </section>
+    <section id="support">
+      <div class="wrap">
+        <h2>Support the cadets</h2>
+        <div class="rule"></div>
+        <div class="grid">
+          <article>
+            <h3>Zeffy</h3>
+            <p>Car show tickets, vendor booths, and club donations go through Zeffy.</p>
+            <p><a href="https://www.zeffy.com/organizations/caney-creek-high-school-jrotc-booster-club">Booster club on Zeffy</a></p>
+          </article>
+          <article>
+            <h3>PayPal and Cash App</h3>
+            <p>The donation card used at events has the PayPal and Cash App codes. Scan the card, or use the copy kept with this site.</p>
+            <p><a href="brand/donation-options.jpg">Open the donation card</a></p>
+          </article>
+          <article>
+            <h3>Facebook</h3>
+            <p>The live booster page is Ccnjrotc Booster Club. Event posts and the car show belong there.</p>
+            <p><a href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Open the page</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <div class="rule gold"></div>
+        <div class="panel">
+          <p><strong>Mike Sanders</strong>, Fundraising Chair</p>
+          <p><a href="mailto:caneycreeknjrotcboosterclub@gmail.com">caneycreeknjrotcboosterclub@gmail.com</a><br>713-320-5012</p>
+          <p>Caney Creek High School<br>13470 FM 1485<br>Caney Creek, TX 77306</p>
+          <p class="muted">The campus NJROTC program is listed on the <a href="https://www.conroeisd.net/o/cchs/page/clubs">Caney Creek clubs page</a>. This site is the booster club’s, not the school district’s.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p>Caney Creek High School NJROTC Booster Club · Caney Creek, Texas</p>
+      <p><a href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook</a> · <a href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Car show registration</a> · <a href="mailto:caneycreeknjrotcboosterclub@gmail.com">Email</a></p>
+    </div>
+  </footer>
+</body>
+</html>
