@@ -64,7 +64,38 @@
     nav { display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; }
     nav a { color: #fff; text-decoration: none; font-size: 0.95rem; }
     nav a:hover { text-decoration: underline; }
-    .hero { padding: 2.5rem 0 2.8rem; }
+    .hero { padding: 1.6rem 0 2.4rem; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.75fr;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .hero-mark {
+      width: min(100%, 320px);
+      justify-self: end;
+      border-radius: 8px;
+    }
+    .marks { background: #fffaf2; }
+    .marks-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem 2.5rem;
+      padding: 1.3rem 0 1.5rem;
+    }
+    .marks figure { margin: 0; text-align: center; }
+    .marks img { display: block; margin: 0 auto 0.4rem; object-fit: contain; }
+    .marks .word { width: min(260px, 70vw); height: auto; background: #f4f1ea; border-radius: 8px; border: 2px solid var(--gold); }
+    .marks .shield { width: 120px; height: auto; background: #fff; border-radius: 8px; }
+    .marks figcaption {
+      margin: 0;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      color: var(--muted);
+    }
     .eyebrow {
       color: var(--gold);
       letter-spacing: 0.14em;
@@ -117,8 +148,10 @@
     footer .wrap { padding-top: 1.4rem; }
     footer a { color: var(--gold); }
     @media (max-width: 720px) {
-      .feature { grid-template-columns: 1fr; }
+      .feature, .hero-grid { grid-template-columns: 1fr; }
       .brand img { width: 56px; height: 56px; }
+      .hero-mark { justify-self: center; width: 220px; }
+      .marks .word { width: min(220px, 70vw); }
     }
   </style>
 </head>
@@ -142,15 +175,33 @@
       </nav>
     </div>
     <div class="wrap hero">
-      <p class="eyebrow">CANEY CREEK PANTHERS · TEXAS</p>
-      <h1 id="content">Funds for Caney Creek NJROTC cadets.</h1>
-      <p class="lede">The booster club raises money for the Naval Junior Reserve Officer Training Corps at Caney Creek High School. Parents, neighbors, and local businesses keep the unit’s travel, meets, and events going.</p>
-      <div class="actions">
-        <a class="btn btn-scarlet" href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Register a car for Nov 21</a>
-        <a class="btn btn-line" href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook page</a>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">CANEY CREEK PANTHERS · TEXAS</p>
+          <h1 id="content">Funds for Caney Creek NJROTC cadets.</h1>
+          <p class="lede">The booster club raises money for the Naval Junior Reserve Officer Training Corps at Caney Creek High School. Parents, neighbors, and local businesses keep the unit’s travel, meets, and events going.</p>
+          <div class="actions">
+            <a class="btn btn-scarlet" href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Register a car for Nov 21</a>
+            <a class="btn btn-line" href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook page</a>
+          </div>
+        </div>
+        <img class="hero-mark" src="brand/unit-mark.jpg" alt="Caney Creek NJROTC unit mark, a sailor and gold anchor">
       </div>
     </div>
   </header>
+  <section class="marks" aria-label="Club marks">
+    <div class="stripes" aria-hidden="true"><span></span><span></span></div>
+    <div class="wrap marks-row">
+      <figure>
+        <img class="word" src="brand/booster-club-logo.jpg" alt="Caney Creek NJROTC Booster Club logo">
+        <figcaption>BOOSTER CLUB</figcaption>
+      </figure>
+      <figure>
+        <img class="shield" src="brand/anchor-shield.jpg" alt="Anchor shield">
+        <figcaption>ANCHOR</figcaption>
+      </figure>
+    </div>
+  </section>
   <main>
     <section id="car-show">
       <div class="wrap">
