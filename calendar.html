@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Full calendar · Caney Creek NJROTC Booster Club</title>
+  <meta name="description" content="Every upcoming date on the Caney Creek NJROTC Booster Club calendar, with a flyer for each event.">
+  <style>
+    :root {
+      --black: #141414;
+      --ink: #1a1a1a;
+      --paper: #f6f1e4;
+      --card: #fffaf2;
+      --gold: #c5b358;
+      --scarlet: #c8102e;
+      --line: #e6dcc4;
+      --muted: #5c5346;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fffaf2 0%, var(--paper) 240px);
+      line-height: 1.5;
+    }
+    a { color: #8f1022; }
+    .stripes { display: flex; flex-direction: column; }
+    .stripes span { display: block; height: 7px; }
+    .stripes span:first-child { background: var(--scarlet); }
+    .stripes span:last-child { background: var(--gold); }
+    header { background: var(--black); color: #fff; }
+    .wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.85rem 0;
+      flex-wrap: wrap;
+    }
+    .brand {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+      color: #fff;
+      text-decoration: none;
+    }
+    .brand img { width: 64px; height: auto; background: #e7e7e7; border-radius: 4px; }
+    .brand strong { display: block; letter-spacing: 0.04em; }
+    nav { display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; }
+    nav a { color: #fff; text-decoration: none; font-weight: 700; }
+    nav a[aria-current="page"] { color: var(--gold); }
+    main { padding: 1.6rem 0 2.5rem; }
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.1; margin: 0 0 0.4rem; }
+    .rule { height: 6px; width: 72px; background: var(--scarlet); margin: 0.4rem 0 1rem; }
+    .rule.gold { background: var(--gold); }
+    .muted { color: var(--muted); }
+    .flyer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 0.9rem;
+    }
+    .flyer-grid a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--scarlet);
+      border-radius: 8px;
+      padding: 0.5rem 0.5rem 0.75rem;
+    }
+    .flyer-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      background: #e7e7e7;
+    }
+    .flyer-grid small {
+      display: block;
+      margin-top: 0.45rem;
+      color: var(--scarlet);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    .flyer-grid span {
+      display: block;
+      font-weight: 700;
+      font-size: 0.98rem;
+      line-height: 1.25;
+    }
+    footer {
+      background: var(--black);
+      color: #f6f1e4;
+      padding: 0 0 1.8rem;
+      font-size: 0.95rem;
+    }
+    footer .wrap { padding-top: 1.4rem; }
+    footer a { color: var(--gold); }
+    @media (max-width: 720px) {
+      .flyer-grid { grid-template-columns: 1fr 1fr; }
+      .top { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stripes" aria-hidden="true"><span></span><span></span></div>
+  <header>
+    <div class="wrap top">
+      <a class="brand" href="index.html">
+        <img src="brand/booster-club-logo.jpg" alt="Caney Creek NJROTC Booster Club">
+        <div>
+          <strong>CANEY CREEK</strong>
+          <span>NJROTC Booster Club</span>
+        </div>
+      </a>
+      <nav aria-label="Page">
+        <a href="index.html">Home</a>
+        <a href="index.html#car-show">Car show</a>
+        <a href="index.html#calendar">Next 30 days</a>
+        <a href="calendar.html" aria-current="page">Calendar</a>
+        <a href="index.html#support">Support</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <h1>Full calendar</h1>
+      <div class="rule gold"></div>
+      <p class="muted">Every date still ahead on the booster calendar. The home page keeps the next 30 days. If the unit schedule did not list a time or a place, the flyer says so.</p>
+      <div class="flyer-grid" id="all-flyers"></div>
+      <p><a href="https://docs.google.com/document/d/1Cj2eRN2UWYvBZ_vkA7_JjE63y5CSIAbW/preview">Full 2026-2027 unit schedule</a></p>
+    </div>
+  </main>
+  <footer>
+    <div class="stripes" aria-hidden="true"><span></span><span></span></div>
+    <div class="wrap">
+      <p>Caney Creek High School NJROTC Booster Club · Caney Creek, Texas</p>
+      <p><a href="index.html">Home</a> · <a href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook</a> · <a href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Car show registration</a> · <a href="mailto:caneycreeknjrotcboosterclub@gmail.com">Email</a></p>
+    </div>
+  </footer>
+  <script src="calendar.js"></script>
+  <script>
+    boosterRenderFlyers(document.getElementById("all-flyers"), "all");
+  </script>
+</body>
+</html>
