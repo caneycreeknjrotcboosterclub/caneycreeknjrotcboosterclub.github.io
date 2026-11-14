@@ -7,14 +7,15 @@
   <meta name="description" content="The Caney Creek High School NJROTC Booster Club in Caney Creek, Texas raises money for cadets. Fall Car Show is Saturday, November 21, 2026.">
   <style>
     :root {
-      --navy: #10233f;
-      --ink: #1c1c1c;
-      --paper: #f4f1ea;
-      --card: #fffcf7;
-      --gold: #a6843c;
-      --crimson: #8e2f39;
-      --line: #e4ddd0;
-      --muted: #5c584f;
+      --black: #141414;
+      --ink: #1a1a1a;
+      --paper: #f6f1e4;
+      --card: #fffaf2;
+      --gold: #c5b358;
+      --gold-deep: #8c7420;
+      --scarlet: #c8102e;
+      --line: #e6dcc4;
+      --muted: #5c5346;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -22,10 +23,10 @@
       margin: 0;
       font-family: "Segoe UI", "Helvetica Neue", sans-serif;
       color: var(--ink);
-      background: var(--paper);
+      background: linear-gradient(180deg, #fffaf2 0%, var(--paper) 240px);
       line-height: 1.5;
     }
-    a { color: var(--navy); }
+    a { color: #8f1022; }
     .skip {
       position: absolute;
       left: 1rem;
@@ -34,8 +35,12 @@
       padding: 0.5rem 0.8rem;
     }
     .skip:focus { top: 0.5rem; }
+    .stripes { display: flex; flex-direction: column; }
+    .stripes span { display: block; height: 7px; }
+    .stripes span:first-child { background: var(--scarlet); }
+    .stripes span:last-child { background: var(--gold); }
     header {
-      background: var(--navy);
+      background: var(--black);
       color: #fff;
     }
     .wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; }
@@ -53,7 +58,7 @@
       color: #fff;
       text-decoration: none;
     }
-    .brand img { width: 72px; height: 72px; object-fit: contain; background: #f4f1ea; border-radius: 4px; }
+    .brand img { width: 76px; height: 76px; object-fit: contain; background: #f4f1ea; border-radius: 4px; border: 2px solid var(--gold); }
     .brand strong { display: block; letter-spacing: 0.08em; font-size: 0.78rem; font-weight: 700; }
     .brand span { display: block; font-size: 1.05rem; letter-spacing: 0.04em; }
     nav { display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; }
@@ -77,21 +82,23 @@
       border-radius: 4px;
       font-weight: 700;
     }
-    .btn-gold { background: var(--gold); color: #1c1404; }
-    .btn-line { border: 1px solid #fff; color: #fff; }
+    .btn-scarlet { background: var(--scarlet); color: #fff; }
+    .btn-line { border: 2px solid var(--gold); color: var(--gold); }
     main section { padding: 2.4rem 0; }
-    h2 { font-size: 1.7rem; margin: 0 0 0.4rem; }
-    .rule { width: 4.5rem; height: 4px; background: var(--crimson); margin: 0 0 1rem; }
-    .rule.gold { background: var(--gold); }
+    h2 { font-size: 1.7rem; margin: 0 0 0.4rem; letter-spacing: 0.01em; }
+    .rule { width: 5.5rem; height: 8px; margin: 0 0 1rem; background: linear-gradient(var(--scarlet) 0 50%, var(--gold) 50% 100%); }
+    .rule.gold { background: linear-gradient(var(--gold) 0 50%, var(--scarlet) 50% 100%); }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.9rem; }
     article, .panel {
       background: var(--card);
       border: 1px solid var(--line);
+      border-top: 4px solid var(--scarlet);
       border-radius: 8px;
       padding: 1rem 1rem 1.1rem;
     }
     article h3 { margin: 0.2rem 0 0.35rem; font-size: 1.15rem; }
-    .when { color: var(--crimson); font-weight: 700; margin: 0; font-size: 0.92rem; }
+    .when { color: var(--scarlet); font-weight: 700; margin: 0; font-size: 0.92rem; }
+    .feature .panel:last-child { border-top-color: var(--gold); }
     .muted { color: var(--muted); }
     .feature {
       display: grid;
@@ -102,12 +109,13 @@
     .price { font-size: 1.7rem; margin: 0.2rem 0; }
     ul.clean { margin: 0.4rem 0 0; padding-left: 1.1rem; }
     footer {
-      background: var(--navy);
-      color: #efe8da;
-      padding: 1.4rem 0 1.8rem;
+      background: var(--black);
+      color: #f6f1e4;
+      padding: 0 0 1.8rem;
       font-size: 0.95rem;
     }
-    footer a { color: #fff; }
+    footer .wrap { padding-top: 1.4rem; }
+    footer a { color: var(--gold); }
     @media (max-width: 720px) {
       .feature { grid-template-columns: 1fr; }
       .brand img { width: 56px; height: 56px; }
@@ -116,6 +124,7 @@
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
+  <div class="stripes" aria-hidden="true"><span></span><span></span></div>
   <header>
     <div class="wrap top">
       <a class="brand" href="#content">
@@ -133,11 +142,11 @@
       </nav>
     </div>
     <div class="wrap hero">
-      <p class="eyebrow">CANEY CREEK, TEXAS</p>
+      <p class="eyebrow">CANEY CREEK PANTHERS · TEXAS</p>
       <h1 id="content">Funds for Caney Creek NJROTC cadets.</h1>
       <p class="lede">The booster club raises money for the Naval Junior Reserve Officer Training Corps at Caney Creek High School. Parents, neighbors, and local businesses keep the unit’s travel, meets, and events going.</p>
       <div class="actions">
-        <a class="btn btn-gold" href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Register a car for Nov 21</a>
+        <a class="btn btn-scarlet" href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Register a car for Nov 21</a>
         <a class="btn btn-line" href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook page</a>
       </div>
     </div>
@@ -247,6 +256,7 @@
     </section>
   </main>
   <footer>
+    <div class="stripes" aria-hidden="true"><span></span><span></span></div>
     <div class="wrap">
       <p>Caney Creek High School NJROTC Booster Club · Caney Creek, Texas</p>
       <p><a href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook</a> · <a href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Car show registration</a> · <a href="mailto:caneycreeknjrotcboosterclub@gmail.com">Email</a></p>
