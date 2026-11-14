@@ -53,9 +53,31 @@
     .header-copy .top { align-items: flex-start; }
     .header-copy nav { width: 100%; }
     .header-photo {
-      background:
-        linear-gradient(90deg, #141414 0%, rgba(20,20,20,0.35) 16%, rgba(20,20,20,0.05) 34%),
-        url("brand/header-cadets.jpg") center center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+      min-height: 540px;
+    }
+    .header-photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .header-photo img.is-on { opacity: 1; }
+    .header-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(90deg, #141414 0%, rgba(20,20,20,0.35) 16%, rgba(20,20,20,0.05) 34%);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .header-photo img { transition: none; }
     }
     .wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; }
     .top {
@@ -190,9 +212,9 @@
       .header-photo {
         min-height: 320px;
         order: -1;
-        background:
-          linear-gradient(180deg, rgba(20,20,20,0.08), rgba(20,20,20,0.28)),
-          url("brand/header-cadets.jpg") center center / cover no-repeat;
+      }
+      .header-photo::after {
+        background: linear-gradient(180deg, rgba(20,20,20,0.08), rgba(20,20,20,0.28));
       }
     }
   </style>
@@ -229,7 +251,13 @@
       <p class="photo-note">Cadets volunteering in the community.</p>
     </div>
     </div>
-    <div class="header-photo" role="img" aria-label="Cadets volunteering with a community member under a tent"></div>
+    <div class="header-photo">
+      <img class="is-on" src="brand/slides/01-volunteering.jpg" alt="Cadets volunteering with a community member under a tent" data-caption="Cadets volunteering in the community.">
+      <img src="brand/slides/02-color-guard-field.jpg" alt="" aria-hidden="true" data-caption="Color guard with the United States and Texas flags." style="object-position: center 42%">
+      <img src="brand/slides/03-color-guard-march.jpg" alt="" aria-hidden="true" data-caption="Color guard on the field." style="object-position: center 40%">
+      <img src="brand/slides/04-friday-night.jpg" alt="" aria-hidden="true" data-caption="Color guard at a Friday night game." style="object-position: center 46%">
+      <img src="brand/slides/05-on-the-field.jpg" alt="" aria-hidden="true" data-caption="Cadets on the field before a game." style="object-position: center 30%">
+    </div>
     </div>
   </header>
   <main>
@@ -594,5 +622,34 @@
       <p><a href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook</a> · <a href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Car show registration</a> · <a href="mailto:caneycreeknjrotcboosterclub@gmail.com">Email</a></p>
     </div>
   </footer>
+  <script>
+    (function () {
+      var box = document.querySelector(".header-photo");
+      var note = document.querySelector(".photo-note");
+      if (!box) return;
+      var slides = box.querySelectorAll("img");
+      if (slides.length < 2) return;
+      var i = 0;
+      var query = /[?&]slide=(\d+)/.exec(location.search);
+      if (query) i = Math.max(0, Math.min(slides.length - 1, parseInt(query[1], 10) - 1));
+      function show(n) {
+        for (var s = 0; s < slides.length; s++) {
+          var on = s === n;
+          slides[s].classList.toggle("is-on", on);
+          slides[s].alt = on ? slides[s].getAttribute("data-caption") : "";
+          if (on) slides[s].removeAttribute("aria-hidden");
+          else slides[s].setAttribute("aria-hidden", "true");
+        }
+        if (note) note.textContent = slides[n].getAttribute("data-caption");
+        i = n;
+      }
+      show(i);
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      setInterval(function () {
+        if (document.hidden) return;
+        show((i + 1) % slides.length);
+      }, 5000);
+    })();
+  </script>
 </body>
 </html>
