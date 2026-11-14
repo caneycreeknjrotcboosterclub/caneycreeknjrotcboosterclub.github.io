@@ -144,14 +144,35 @@
       align-items: start;
     }
     .btn-ink { border: 2px solid var(--ink); color: var(--ink); }
+    .qr-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0.8rem;
+      width: 100%;
+      max-width: 360px;
+      margin: 1rem 0 0.4rem;
+    }
+    .qr-row a { color: inherit; text-decoration: none; text-align: center; min-width: 0; }
+    .qr-row img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+    }
+    .qr-row span { display: block; margin-top: 0.35rem; font-weight: 700; font-size: 0.85rem; }
     .flyer-feature {
       display: grid;
-      grid-template-columns: minmax(200px, 340px) 1fr;
+      grid-template-columns: minmax(200px, 340px) minmax(0, 1fr);
       gap: 1.2rem;
       align-items: start;
     }
+    .flyer-feature > * { min-width: 0; }
     .flyer-feature img {
       width: 100%;
+      max-width: 100%;
       height: auto;
       display: block;
       border-radius: 8px;
@@ -204,7 +225,7 @@
     footer .wrap { padding-top: 1.4rem; }
     footer a { color: var(--gold); }
     @media (max-width: 720px) {
-      .feature, .flyer-feature, .header-panel { grid-template-columns: 1fr; }
+      .feature, .flyer-feature, .header-panel { grid-template-columns: minmax(0, 1fr); }
       .flyer-grid { grid-template-columns: 1fr 1fr; }
       .header-copy .top { flex-direction: column; align-items: flex-start; }
       .header-copy nav { gap: 0.35rem 0.8rem; }
@@ -279,6 +300,17 @@
               <a class="btn btn-scarlet" href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Car registration</a>
               <a class="btn btn-ink" href="https://www.zeffy.com/en-US/ticketing/vendor-registration-50">Vendor registration</a>
             </div>
+            <div class="qr-row">
+              <a href="https://www.zeffy.com/en-US/ticketing/fall-car-show">
+                <img src="brand/qr-fall-car-show.png" width="600" height="600" alt="QR code that opens Fall Car Show car registration on Zeffy">
+                <span>Car registration</span>
+              </a>
+              <a href="https://www.zeffy.com/en-US/ticketing/vendor-registration-50">
+                <img src="brand/qr-vendor-booth.png" width="600" height="600" alt="QR code that opens Fall Car Show vendor booth registration on Zeffy">
+                <span>Vendor booths</span>
+              </a>
+            </div>
+            <p class="muted">These codes are only for this car show. The same Zeffy account holds both forms. The other events do not have a registration code.</p>
           </div>
         </div>
       </div>
@@ -300,7 +332,7 @@
         <div class="grid">
           <article>
             <h3>Zeffy</h3>
-            <p>Car show tickets, vendor booths, and club donations go through Zeffy.</p>
+            <p>One Zeffy account holds the November 21 car registration and vendor booth forms. The other calendar events do not have a Zeffy form. Donations use PayPal and Cash App.</p>
             <p><a href="https://www.zeffy.com/organizations/caney-creek-high-school-jrotc-booster-club">Booster club on Zeffy</a></p>
           </article>
           <article>
