@@ -43,6 +43,20 @@
       background: var(--black);
       color: #fff;
     }
+    .header-panel {
+      display: grid;
+      grid-template-columns: 1.15fr 0.9fr;
+      min-height: 540px;
+    }
+    .header-copy { padding-bottom: 2.2rem; }
+    .header-copy .wrap { width: auto; margin-left: max(1rem, calc(50vw - 540px)); margin-right: 1.25rem; }
+    .header-copy .top { align-items: flex-start; }
+    .header-copy nav { width: 100%; }
+    .header-photo {
+      background:
+        linear-gradient(90deg, #141414 0%, rgba(20,20,20,0.35) 16%, rgba(20,20,20,0.05) 34%),
+        url("brand/header-cadets.jpg") center 42% / cover no-repeat;
+    }
     .wrap { width: min(1080px, calc(100% - 2rem)); margin: 0 auto; }
     .top {
       display: flex;
@@ -59,43 +73,13 @@
       text-decoration: none;
     }
     .brand img { width: 76px; height: 76px; object-fit: contain; background: #f4f1ea; border-radius: 4px; border: 2px solid var(--gold); }
-    .brand strong { display: block; letter-spacing: 0.08em; font-size: 0.78rem; font-weight: 700; }
-    .brand span { display: block; font-size: 1.05rem; letter-spacing: 0.04em; }
+    .brand strong { display: block; letter-spacing: 0.08em; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+    .brand span { display: block; font-size: 1.05rem; letter-spacing: 0.04em; white-space: nowrap; }
     nav { display: flex; flex-wrap: wrap; gap: 0.35rem 0.9rem; }
     nav a { color: #fff; text-decoration: none; font-size: 0.95rem; }
     nav a:hover { text-decoration: underline; }
-    .hero { padding: 1.6rem 0 2.4rem; }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.75fr;
-      gap: 1.5rem;
-      align-items: center;
-    }
-    .hero-mark {
-      width: min(100%, 320px);
-      justify-self: end;
-      border-radius: 8px;
-    }
-    .marks { background: #fffaf2; }
-    .marks-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem 2.5rem;
-      padding: 1.3rem 0 1.5rem;
-    }
-    .marks figure { margin: 0; text-align: center; }
-    .marks img { display: block; margin: 0 auto 0.4rem; object-fit: contain; }
-    .marks .word { width: min(260px, 70vw); height: auto; background: #f4f1ea; border-radius: 8px; border: 2px solid var(--gold); }
-    .marks .shield { width: 120px; height: auto; background: #fff; border-radius: 8px; }
-    .marks figcaption {
-      margin: 0;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      font-weight: 700;
-      color: var(--muted);
-    }
+    .hero { padding: 1.4rem 0 0; }
+    .photo-note { margin: 1rem 0 0; color: #f6f1e4; font-size: 0.92rem; }
     .eyebrow {
       color: var(--gold);
       letter-spacing: 0.14em;
@@ -104,7 +88,7 @@
       margin: 0 0 0.6rem;
     }
     h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 0.8rem; max-width: 16ch; }
-    .lede { max-width: 42rem; font-size: 1.12rem; margin: 0 0 1.4rem; }
+    .lede { max-width: 36rem; font-size: 1.12rem; margin: 0 0 1.4rem; }
     .actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
     .btn {
       display: inline-block;
@@ -148,10 +132,15 @@
     footer .wrap { padding-top: 1.4rem; }
     footer a { color: var(--gold); }
     @media (max-width: 720px) {
-      .feature, .hero-grid { grid-template-columns: 1fr; }
+      .feature, .header-panel { grid-template-columns: 1fr; }
       .brand img { width: 56px; height: 56px; }
-      .hero-mark { justify-self: center; width: 220px; }
-      .marks .word { width: min(220px, 70vw); }
+      .header-photo {
+        min-height: 480px;
+        order: -1;
+        background:
+          linear-gradient(180deg, rgba(20,20,20,0.12), rgba(20,20,20,0.4)),
+          url("brand/header-cadets.jpg") center 48% / cover no-repeat;
+      }
     }
   </style>
 </head>
@@ -159,6 +148,8 @@
   <a class="skip" href="#content">Skip to content</a>
   <div class="stripes" aria-hidden="true"><span></span><span></span></div>
   <header>
+    <div class="header-panel">
+    <div class="header-copy">
     <div class="wrap top">
       <a class="brand" href="#content">
         <img src="brand/booster-club-logo.jpg" alt="Caney Creek NJROTC Booster Club">
@@ -175,33 +166,19 @@
       </nav>
     </div>
     <div class="wrap hero">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">CANEY CREEK PANTHERS · TEXAS</p>
-          <h1 id="content">Funds for Caney Creek NJROTC cadets.</h1>
-          <p class="lede">The booster club raises money for the Naval Junior Reserve Officer Training Corps at Caney Creek High School. Parents, neighbors, and local businesses keep the unit’s travel, meets, and events going.</p>
-          <div class="actions">
-            <a class="btn btn-scarlet" href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Register a car for Nov 21</a>
-            <a class="btn btn-line" href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook page</a>
-          </div>
-        </div>
-        <img class="hero-mark" src="brand/unit-mark.jpg" alt="Caney Creek NJROTC unit mark, a sailor and gold anchor">
+      <p class="eyebrow">CANEY CREEK PANTHERS · TEXAS</p>
+      <h1 id="content">Funds for Caney Creek NJROTC cadets.</h1>
+      <p class="lede">The booster club raises money for the Naval Junior Reserve Officer Training Corps at Caney Creek High School. Parents, neighbors, and local businesses keep the unit’s travel, meets, and events going.</p>
+      <div class="actions">
+        <a class="btn btn-scarlet" href="https://www.zeffy.com/en-US/ticketing/fall-car-show">Register a car for Nov 21</a>
+        <a class="btn btn-line" href="https://www.facebook.com/p/Ccnjrotc-Booster-Club-61587673677596/">Facebook page</a>
       </div>
+      <p class="photo-note">Cadets volunteering in the community.</p>
+    </div>
+    </div>
+    <div class="header-photo" role="img" aria-label="Cadets volunteering with a community member under a tent"></div>
     </div>
   </header>
-  <section class="marks" aria-label="Club marks">
-    <div class="stripes" aria-hidden="true"><span></span><span></span></div>
-    <div class="wrap marks-row">
-      <figure>
-        <img class="word" src="brand/booster-club-logo.jpg" alt="Caney Creek NJROTC Booster Club logo">
-        <figcaption>BOOSTER CLUB</figcaption>
-      </figure>
-      <figure>
-        <img class="shield" src="brand/anchor-shield.jpg" alt="Anchor shield">
-        <figcaption>ANCHOR</figcaption>
-      </figure>
-    </div>
-  </section>
   <main>
     <section id="car-show">
       <div class="wrap">
